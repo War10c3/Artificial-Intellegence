@@ -1,0 +1,29 @@
+from datetime import date
+days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+print(days[date.weekday(date.today())])
+import webbrowser
+webbrowser.open('https://www.youtube.com/watch?v=QJbpJQscn9E&t=113s')
+import os
+os.rename('file.txt','file.jpg')
+
+
+# regex assignment
+
+#ques 1
+import re
+
+emails=''' abc@gmail.com
+            xyz@yahoo.com
+            jainyz.yahoo.com
+            str892@gmail.@com
+            sarthakdj_a@hotmail.com'''
+pattern= re.compile('[a-zA-Z0-9_.]+@{1}[a-zA-Z0-9]+\.[a-zA-Z0-9]+')
+matches= pattern.findall(emails)
+for i in matches:
+    print(i)
+#ques 2
+numbers=''' +91123456789 +8 23658974 +91-987654321 +91-8652398745 +91-6230525302 '''
+pattern = re.compile(r'[+]91-[6-9][0-9]{9}')
+matches = pattern.findall(numbers)
+for i in matches:
+    print(i)
